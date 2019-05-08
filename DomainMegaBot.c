@@ -89,13 +89,13 @@ int DomainMegaBot(char *domain , char * NoMatchPattern, char * WhoisQueryServer,
     }
     while(1);
 	if (strstr(response,NoMatchPattern)!=NULL) {
-		printf("%s AVAILABLE FOR REGISTRATION!\n", domain);
+		printf("\n%s AVAILABLE FOR REGISTRATION!\n", domain);
 		fpR=fopen(Str_Conn(DomainExt,"_RESULTS.DAT"),"a");
 		fprintf(fpR,"%s\n",domain);
         fclose(fpR);
 	}
 	else
-		printf("%s NOT AVAILABLE.\n", domain);
+		printf(".", domain);
 	return 0;
 }
 
